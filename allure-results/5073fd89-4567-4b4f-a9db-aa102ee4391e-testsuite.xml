@@ -1,0 +1,85 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1641923386341' stop='1641923387669'>
+    <name>My Test</name>
+    <title>My Test</title>
+    <test-cases>
+        <test-case start='1641923386342' status='passed' stop='1641923387419'>
+            <name>"before all" hook</name>
+            <title>"before all" hook</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-97.0.4692.71'/>
+            </parameters>
+            <steps>
+                <step start='1641923386343' status='passed' stop='1641923387418'>
+                    <name>POST /session/:sessionId/url</name>
+                    <title>POST /session/:sessionId/url</title>
+                    <attachments>
+                        <attachment title='Request' source='aa6a3227-3b0f-48d8-8cf1-07491a7c882d-attachment.json' type='application/json' size='41'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1641923387419' status='failed' stop='1641923387668'>
+            <name>should return “OTCM” quote in quote textbox</name>
+            <title>should return “OTCM” quote in quote textbox</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-97.0.4692.71'/>
+            </parameters>
+            <steps>
+                <step start='1641923387421' status='passed' stop='1641923387441'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='653cb377-9142-4f45-8b96-28c4c0026cfd-attachment.json' type='application/json' size='141'/>
+                        <attachment title='Response' source='bb4af503-4b63-4942-a031-ba5164f5df3b-attachment.json' type='application/json' size='83'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1641923387448' status='passed' stop='1641923387462'>
+                    <name>POST /session/:sessionId/execute/sync</name>
+                    <title>POST /session/:sessionId/execute/sync</title>
+                    <attachments>
+                        <attachment title='Request' source='9c34fe49-7faf-4c44-b604-f2ab6d6ffa16-attachment.json' type='application/json' size='8337'/>
+                        <attachment title='Response' source='6fb42a54-4eb7-4799-ac41-b2ffed952544-attachment.json' type='application/json' size='4'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1641923387464' status='failed' stop='1641923387668'>
+                    <name>GET /session/:sessionId/screenshot</name>
+                    <title>GET /session/:sessionId/screenshot</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1641923387465' status='passed' stop='1641923387662'>
+                            <name>POST /session/:sessionId/element</name>
+                            <title>POST /session/:sessionId/element</title>
+                            <attachments>
+                                <attachment title='Request' source='78a7a23a-0c02-4b64-ac62-fcf04d498065-attachment.json' type='application/json' size='141'/>
+                                <attachment title='Screenshot' source='07344ffe-fed9-4c5e-81bb-796c94f4dc5f-attachment.png' type='image/png' size='77057'/>
+                            </attachments>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>TypeError: expect(...).setValue is not a function</message>
+                <stack-trace>TypeError: expect(...).setValue is not a function
+                    at UserContext.&lt;anonymous> (C:\Users\Valen\Desktop\wdioTest\test\specs\/example.e2e.js:9:38)
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

@@ -1,0 +1,132 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1641928298305' stop='1641928304974'>
+    <name>My Test</name>
+    <title>My Test</title>
+    <test-cases>
+        <test-case start='1641928298306' status='passed' stop='1641928299427'>
+            <name>"before all" hook</name>
+            <title>"before all" hook</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-97.0.4692.71'/>
+            </parameters>
+            <steps>
+                <step start='1641928298307' status='passed' stop='1641928299426'>
+                    <name>POST /session/:sessionId/url</name>
+                    <title>POST /session/:sessionId/url</title>
+                    <attachments>
+                        <attachment title='Request' source='61658381-a67b-4934-8c94-ab98a6f99a92-attachment.json' type='application/json' size='41'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1641928299428' status='failed' stop='1641928299960'>
+            <name>should return “OTCM” quote in quote textbox &amp; search</name>
+            <title>should return “OTCM” quote in quote textbox &amp; search</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-97.0.4692.71'/>
+            </parameters>
+            <steps>
+                <step start='1641928299429' status='passed' stop='1641928299444'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='f846338b-5cd1-433f-aaca-edf3ceb03078-attachment.json' type='application/json' size='141'/>
+                        <attachment title='Response' source='da5aca16-73f6-4226-8eb2-840246be0f0a-attachment.json' type='application/json' size='83'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1641928299454' status='passed' stop='1641928299475'>
+                    <name>POST /session/:sessionId/execute/sync</name>
+                    <title>POST /session/:sessionId/execute/sync</title>
+                    <attachments>
+                        <attachment title='Request' source='d121d6c7-8caf-420d-93b3-8f7bbe3e36fe-attachment.json' type='application/json' size='8337'/>
+                        <attachment title='Response' source='57c646e0-0b50-49d7-a45b-ffad285ce7cc-attachment.json' type='application/json' size='4'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1641928299476' status='passed' stop='1641928299531'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='c12ce1ee-84e2-4a62-af8f-e62c239bd9cd-attachment.json' type='application/json' size='141'/>
+                        <attachment title='Response' source='c88ebacc-3b20-44e1-83d6-4dd7d8162a9f-attachment.json' type='application/json' size='83'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1641928299534' status='passed' stop='1641928299684'>
+                    <name>POST /session/:sessionId/element/e7f87a3e-f0a8-4368-bf0c-fe3d64eb63d1/clear</name>
+                    <title>POST /session/:sessionId/element/e7f87a3e-f0a8-4368-bf0c-fe3d64eb63d1/clear</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1641928299687' status='passed' stop='1641928299777'>
+                    <name>POST /session/:sessionId/element/e7f87a3e-f0a8-4368-bf0c-fe3d64eb63d1/value</name>
+                    <title>POST /session/:sessionId/element/e7f87a3e-f0a8-4368-bf0c-fe3d64eb63d1/value</title>
+                    <attachments>
+                        <attachment title='Request' source='88089550-1002-437e-989e-721e3cbc5591-attachment.json' type='application/json' size='20'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1641928299777' status='passed' stop='1641928299792'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='12be3d39-8548-4110-a7a1-5a006b4a6e23-attachment.json' type='application/json' size='73'/>
+                        <attachment title='Response' source='a630f75f-b10d-41f4-bf2a-fd20ff826067-attachment.json' type='application/json' size='83'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1641928299795' status='passed' stop='1641928299952'>
+                    <name>GET /session/:sessionId/screenshot</name>
+                    <title>GET /session/:sessionId/screenshot</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='b69402e5-b38d-4bd8-aac7-c8ea2f616253-attachment.png' type='image/png' size='77961'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Error: touchAction can be used with Appium only.</message>
+                <stack-trace>Error: touchAction can be used with Appium only.
+                    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+                    at UserContext.&lt;anonymous> (C:\Users\Valen\Desktop\wdioTest\test\specs\/example.e2e.js:10:9)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1641928299961' status='passed' stop='1641928304973'>
+            <name>should redirect Quote page</name>
+            <title>should redirect Quote page</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-97.0.4692.71'/>
+            </parameters>
+            <steps>
+                <step start='1641928299961' status='passed' stop='1641928300403'>
+                    <name>POST /session/:sessionId/url</name>
+                    <title>POST /session/:sessionId/url</title>
+                    <attachments>
+                        <attachment title='Request' source='39626757-00f7-4d98-b75a-624c32a52a78-attachment.json' type='application/json' size='58'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
