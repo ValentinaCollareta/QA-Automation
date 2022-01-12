@@ -2,8 +2,8 @@ import TestPage from '../pageobjects/test.page';
 
 let openValue, marketCapQuotePage, marketCapSecurityPage, companyName, companySymbol, securityDate;
 
-describe('My Test 3', () => {
-    beforeAll('QA Automation', async () => {
+describe('ADBCF TEST', () => {
+    beforeAll('Visit Main Page', async () => {
         await TestPage.open();
     });
     it('should return “ADBCF” quote in quote textbox & search', async () => {
@@ -15,6 +15,7 @@ describe('My Test 3', () => {
     it('should navigate to Quote tab', async () => {
         await browser.waitUntil(() => TestPage.quoteTab.isClickable());
         await TestPage.quoteTab.click();
+        await expect(TestPage.quoteTab).toHaveUrlContaining('quote');
     });
     it('should capture Open & Market Cap values', async () => {
         await TestPage.openValue.waitForDisplayed();
@@ -33,6 +34,7 @@ describe('My Test 3', () => {
     it('should navigate to “Security Details” tab', async () => {
         await browser.waitUntil(() => TestPage.securityDetailsTab.isClickable());
         await TestPage.securityDetailsTab.click();
+        await expect(TestPage.securityDetailsTab).toHaveUrlContaining('security');
     });
     it('should assert Market Cap on Quote Page matches with Security Detail Page', async () => {
         await TestPage.marketCapSecurityPage.waitForDisplayed();
