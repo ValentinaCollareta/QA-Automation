@@ -2,31 +2,43 @@ import Page from './page';
 
 class TestPage extends Page {
     get quote() {
-        return $('//div[@class="_1jocgGqVNR HOcrWAfzU5 sc-htpNat iSNGhk sc-bdVaJa iHZvIS"]/input[@placeholder="Quote"]');
+        return $('//input[@placeholder="Quote"][1]');
     }
 
     get search() {
-        return $('//div[@class="_3XTsBmZSmj"]/div[2]');
-    }
-
-    get openValue() {
-        return $('//div[@class="_1G7n38q1bb sc-bdVaJa lbvrig"][1]/p');
-    }
-
-    get marketCapValue() {
-        return $('//div[@class="_1G7n38q1bb sc-bdVaJa lbvrig"][11]/p');
-    }
-
-    get marketCapValueSDP() {
-        return $('//div[@class="_8AXJn4ourf sc-htpNat jtWIOA sc-bdVaJa gRrvFh"]/div[@class="sc-bdVaJa kYmYWE"]');
-    }
-
-    get date() {
-        return $('//div[@class="_8AXJn4ourf sc-htpNat jtWIOA sc-bdVaJa gRrvFh"]/div[@class="sc-bdVaJa fKInnm"]');
+        return $('//input[@placeholder="Quote"]/parent::node()/following-sibling::div/div[1]/div[2]');
     }
 
     get companyName() {
-        return $('//div[@class="_33MgosRhnB sc-htpNat pyeRb sc-bdVaJa bVTGsP"]/h1');
+        return $('h1:nth-child(1)');
+    }
+
+    get companySymbol() {
+        return $('h1:nth-child(2)');
+    }
+
+    get quoteTab() {
+        return $('a[href$="quote"]');
+    }
+
+    get securityDetailsTab() {
+        return $('a[href$="security"]');
+    }
+
+    get openValue() {
+        return $('//label[contains(.,"Open")]/following-sibling::p');
+    }
+
+    get marketCapQuotePage() {
+        return $('div > span + p');
+    }
+
+    get marketCapSecurityPage() {
+        return $('h4 + div > div:nth-child(2)');
+    }
+
+    get securityDate() {
+        return $('h4 + div > div:nth-child(3)');
     }
 
     open() {
