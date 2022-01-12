@@ -2,13 +2,13 @@ import TestPage from '../pageobjects/test.page';
 
 let openValue, marketCapQuotePage, marketCapSecurityPage, companyName, companySymbol, securityDate;
 
-describe('My Test', () => {
+describe('My Test 3', () => {
     beforeAll('QA Automation', async () => {
         await TestPage.open();
     });
-    it('should return “OTCM” quote in quote textbox & search', async () => {
+    it('should return “ADBCF” quote in quote textbox & search', async () => {
         await TestPage.quote.waitForDisplayed();
-        await TestPage.quote.setValue('OTCM');
+        await TestPage.quote.setValue('ADBCF');
         await TestPage.search.waitForClickable();
         await TestPage.search.click();
     });

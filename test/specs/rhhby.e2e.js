@@ -1,5 +1,7 @@
 import TestPage from '../pageobjects/test.page';
 
+let openValue, marketCapQuotePage, marketCapSecurityPage, companyName, companySymbol, securityDate;
+
 describe('My Test 2', () => {
     beforeAll('QA Automation', async () => {
         await TestPage.open();
@@ -7,39 +9,37 @@ describe('My Test 2', () => {
     it('should return “RHHBY” quote in quote textbox & search', async () => {
         await TestPage.quote.waitForDisplayed();
         await TestPage.quote.setValue('RHHBY');
-        await browser.pause(2000);
+        await TestPage.search.waitForClickable();
         await TestPage.search.click();
     });
     it('should navigate to Quote tab', async () => {
-        const navQuote = await $('//div[@class="_2H94cIcGl1 sc-bdVaJa fSzdHl"]/a[1]');
-        await browser.waitUntil(() => navQuote.isClickable());
-        await browser.pause(2000);
-        await navQuote.click();
+        await browser.waitUntil(() => TestPage.quoteTab.isClickable());
+        await TestPage.quoteTab.click();
     });
     it('should capture Open & Market Cap values', async () => {
-        const openValue = await TestPage.openValue.getText();
-        const marketCapValue = await TestPage.marketCapValue.getText();
-        console.log(openValue, marketCapValue);
+        await TestPage.openValue.waitForDisplayed();
+        openValue = await TestPage.openValue.getText();
+        await TestPage.marketCapQuotePage.waitForDisplayed();
+        marketCapQuotePage = await TestPage.marketCapQuotePage.getText();
+        console.log(openValue, marketCapQuotePage);
     });
     it('should assert the Company Name & Symbol', async () => {
         await TestPage.companyName.waitForDisplayed();
-        const companyName = await TestPage.companyName.getText();
-        console.log(companyName);
-        await expect(companyName).toBe('RHHBY');
+        companyName = await TestPage.companyName.getText();
+        await TestPage.companySymbol.waitForDisplayed();
+        companySymbol = await TestPage.companySymbol.getText();
+        console.log(companyName, companySymbol);
     });
     it('should navigate to “Security Details” tab', async () => {
-        const securityDetailsTab = await $('//div[@class="_2H94cIcGl1 sc-bdVaJa fSzdHl"][3]/a');
-        await browser.waitUntil(() => securityDetailsTab.isClickable());
-        await browser.pause(2000);
-        await securityDetailsTab.click();
+        await browser.waitUntil(() => TestPage.securityDetailsTab.isClickable());
+        await TestPage.securityDetailsTab.click();
     });
     it('should assert Market Cap on Quote Page matches with Security Detail Page', async () => {
-        const marketCapValueSDP = await TestPage.marketCapValueSDP.getText();
-        await expect(marketCapValue).isEqual(marketCapValueSDP);
-    });
-    it('should Print log “Market Cap $x on $date”', async () => {
-        const marketCapValueSDP = await TestPage.marketCapValueSDP.getText();
-        const date = await TestPage.date.getText();
-        console.log('Market Cap $', marketCapValueSDP, ' on ', date);
+        await TestPage.marketCapSecurityPage.waitForDisplayed();
+        marketCapSecurityPage = await TestPage.marketCapSecurityPage.getText();
+        await TestPage.securityDate.waitForDisplayed();
+        securityDate = await TestPage.securityDate.getText();
+        console.log('Market Cap $', marketCapSecurityPage, ' on ', securityDate);
+        expect(marketCapSecurityPage).toEqual(marketCapQuotePage);
     });
 });
